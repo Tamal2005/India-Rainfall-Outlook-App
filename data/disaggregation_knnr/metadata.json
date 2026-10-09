@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "method": "KNNR + Gram-Schmidt orthogonal rotation",
+  "description": "Compact rainfall temporal-disaggregation reference library generated from historical hourly rainfall.",
+  "input_file": "D:\\coding playground\\python\\College Project\\Data\\processed\\training_ready\\target_rainfall_next_hour\\data.parquet",
+  "windows": [
+    3,
+    5,
+    7
+  ],
+  "wet_threshold_mm": 1.0,
+  "hours_per_day": 24,
+  "gram_schmidt": {
+    "dimension": 24,
+    "rotation_shape": [
+      24,
+      24
+    ],
+    "orthogonal": true,
+    "inverse": "R.T",
+    "final_coordinate": "daily_total / sqrt(24)"
+  },
+  "compression": {
+    "max_samples_per_district_pattern_month": 200,
+    "season_buckets": 12
+  },
+  "random_seed": 42,
+  "daily_statistics": {
+    "location_days": 6590868,
+    "districts": 723,
+    "date_min": "2001-01-15",
+    "date_max": "2025-12-30"
+  },
+  "libraries": {
+    "3": {
+      "file": "knnr_3day.parquet",
+      "rows": 2244508,
+      "districts": 723,
+      "patterns": [
+        "type_1",
+        "type_2",
+        "type_3a",
+        "type_3b",
+        "type_4a",
+        "type_4b",
+        "type_5"
+      ],
+      "splits": {}
+    },
+    "5": {
+      "file": "knnr_5day.parquet",
+      "rows": 2247332,
+      "districts": 723,
+      "patterns": [
+        "L0H0",
+        "L0H1",
+        "L0H2",
+        "L0H3",
+        "L0H4",
+        "L1H0",
+        "L1H1",
+        "L1H2",
+        "L1H3",
+        "L2H0",
+        "L2H1",
+        "L2H2",
+        "L3H0",
+        "L3H1",
+        "L4H0"
+      ],
+      "splits": {}
+    },
+    "7": {
+      "file": "knnr_7day.parquet",
+      "rows": 2247326,
+      "districts": 723,
+      "patterns": [
+        "L0H0",
+        "L0H1",
+        "L0H2",
+        "L0H3",
+        "L0H4",
+        "L0H5",
+        "L0H6",
+        "L1H0",
+        "L1H1",
+        "L1H2",
+        "L1H3",
+        "L1H4",
+        "L1H5",
+        "L2H0",
+        "L2H1",
+        "L2H2",
+        "L2H3",
+        "L2H4",
+        "L3H0",
+        "L3H1",
+        "L3H2",
+        "L3H3",
+        "L4H0",
+        "L4H1",
+        "L4H2",
+        "L5H0",
+        "L5H1",
+        "L6H0"
+      ],
+      "splits": {}
+    }
+  }
+}

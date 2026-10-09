@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      SHOW_PROGRESS: "0"
+      # CORS_ORIGINS: "https://your-frontend.example.com"   # only if the UI is hosted elsewhere
+    # Uncomment to use artifacts from your machine instead of the ones baked into the image:
+    # volumes: ["./data:/app/data:ro"]
+    restart: unless-stopped

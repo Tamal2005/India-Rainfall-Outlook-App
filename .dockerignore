@@ -1,0 +1,9 @@
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+frontend/dist
+frontend/*.tsbuildinfo
+backend/tests
+.git
+*.md
+!data/**/*.md
